@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 option(BUILD_SAMPLES ON)
 
-set(PROJECT_NAME matrix)
+set(PROJECT_NAME data_struct)
 project(${PROJECT_NAME})
 
 include(CTest)
@@ -13,10 +13,6 @@ set(MP2_CUSTOM_PROJECT "${PROJECT_NAME}")
 set(MP2_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 add_subdirectory(include)
-
-if(BUILD_SAMPLES)
-	add_subdirectory(samples)
-endif()
 
 if(BUILD_TESTING)
     add_subdirectory(gtest)

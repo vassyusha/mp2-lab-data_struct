@@ -1,25 +1,28 @@
 ﻿#pragma once
-#include <vector>
+#include <deque>
 
-template<typename T, class Container = std::vector<T>>
+template<typename T, class Container = std::deque<T>>
 class TStack {
 private:
-	Container stack;
+	Container cont;
 public:
-	std::size_t size() const { return this->stack.size(); }
-	bool empty() const { return (this->stack.size() == 0); }
+	TStack(const Container& cont = Container()): cont(cont){}
+
+	std::size_t size() const { return this->cont.size(); }
+	bool empty() const { return (this->cont.size() == 0); }
 
 	T top() const {
 		if (this->empty()) throw "size should be greater than 0";
-		return this->stack[this->stack.size() - 1];
+		return this->cont[this->cont.size() - 1];
 	}
 
 	void push(const T& el) {
-		this->stack.push_back(el);
+		this->cont.push_back(el);
 	}
 
 	void pop() {
 		if (this->empty()) throw "size should be greater than 0";
-		this->stack.pop_back();
+		this->cont.pop_back();
 	}
 };
+

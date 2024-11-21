@@ -6,7 +6,7 @@ class TStack {
 private:
 	Container stack;
 public:
-	size_t size() const { return this->stack.size(); }
+	std::size_t size() const { return this->stack.size(); }
 	bool empty() const { return (this->stack.size() == 0); }
 
 	T top() const {

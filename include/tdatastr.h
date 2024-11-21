@@ -10,7 +10,7 @@ public:
 	bool empty() const { return (this->stack.size() == 0); }
 
 	T top() const {
-		if (this->empty()) throw std::out_of_range("size should be greater than 0");
+		if (this->empty()) throw "size should be greater than 0";
 		return this->stack[this->stack.size() - 1];
 	}
 
@@ -19,7 +19,7 @@ public:
 	}
 
 	void pop() {
-		if (this->empty()) throw std::out_of_range("size should be greater than 0");
+		if (this->empty()) throw "size should be greater than 0";
 		this->stack.pop_back();
 	}
 };

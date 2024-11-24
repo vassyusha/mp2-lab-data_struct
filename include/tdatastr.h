@@ -31,9 +31,9 @@ template<typename T>
 class TQueue {
 private:
 	std::vector<T> cont;
-	size_t sz = 0;
-	size_t st = 0;
-	size_t en = 0;
+	std::size_t sz = 0;
+	std::size_t st = 0;
+	std::size_t en = 0;
 
 	void repack() {
 

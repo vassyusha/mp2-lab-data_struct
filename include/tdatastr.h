@@ -59,8 +59,8 @@ public:
 	}
 
 	T front() const {
-		if (sz == 0) throw "size should be greater than 0";
-		return this->cont[st%(this->cont.size())]; 
+		if (this->empty()) throw "size should be greater than 0";
+		return this->cont[this->st % (this->cont.size())]; 
 	}
 	
 	void push(const T& el) {
@@ -75,7 +75,7 @@ public:
 	}
 
 	void pop() {
-		if (sz == 0) throw "size should be greater than 0";
+		if (this->empty()) throw "size should be greater than 0";
 		this->st = (this->st + 1) % (this->cont.size());
 		this->sz--;
 	}

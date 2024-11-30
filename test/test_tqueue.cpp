@@ -87,3 +87,33 @@ TEST(TQueue, assigned_queue_is_equal_to_the_source_one) {
 	EXPECT_EQ(1, q1.size());
 	EXPECT_EQ(1, q.front());
 }
+
+TEST(TQueue, test_case) {
+	TQueue<int> q;
+	for (int i = 0; i < 7; i++) {
+		q.push(i+1);
+	}
+	for (int i = 0; i < 3; i++) {
+		q.pop();
+	}
+	for (int i = 0; i < 4; i++) {
+		q.push(i+10);
+	}
+
+	EXPECT_EQ(4, q.front());
+	q.pop();
+	EXPECT_EQ(5, q.front());
+	q.pop();
+	EXPECT_EQ(6, q.front());
+	q.pop();
+	EXPECT_EQ(7, q.front());
+	q.pop();
+	EXPECT_EQ(10, q.front());
+	q.pop();
+	EXPECT_EQ(11, q.front());
+	q.pop();
+	EXPECT_EQ(12, q.front());
+	q.pop();
+	EXPECT_EQ(13, q.front());
+	q.pop();
+}

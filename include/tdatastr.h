@@ -65,7 +65,7 @@ public:
 	
 	void push(const T& el) {
 
-		if (this->sz == this->cont.size()) {
+		if (this->sz + 1 == this->cont.size()) {
 			this->repack();
 		}
 
